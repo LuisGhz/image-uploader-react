@@ -4,7 +4,11 @@ function App() {
 
   return (
     <>
-      <section className='image-uploader'>section</section>
+      <main className='image-uploader'>
+        <div className='container'>
+          Container
+        </div>
+      </main>
       <footer>Footer</footer>
     </>
   )
