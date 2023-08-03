@@ -1,0 +1,57 @@
+.drag-image__title {
+  color: var(--gray-2);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.63px;
+  line-height: normal;
+  text-align: center;
+}
+
+.drag-image__file-description {
+  color: var(--gray-3);
+  font-family: Poppins;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.35px;
+  line-height: normal;
+  text-align: center;
+  margin-block-end: 30px;
+}
+
+.drag-area {
+  background: #f6f8fb;
+  border-radius: 12px;
+  border: 1px dashed #97bef4;
+}
+
+.drag-area__img {
+  display: block;
+  margin: 30px auto 20px auto;
+  width: 120px;
+}
+
+.drag-area__description,
+.drag-image__or {
+  color: var(--gray-4);
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.42px;
+  line-height: normal;
+  text-align: center;
+}
+
+.drag-image__choose-btn {
+  background: var(--blue-1);
+  border-radius: 8px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 15px;
+}
