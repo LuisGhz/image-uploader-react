@@ -41,11 +41,11 @@ export const DragImage = ({ uploadImage }: DragImageProps) => {
   return (
     <div className="drag-image">
       <h1 className="drag-image__title">Upload your image</h1>
-      <p className="drag-image__file-description">
+      <p className={["drag-image__file-description", (isInvalidSize && isInvalidType) ? "drag-image__file-description--no-error" : ""].join(' ')}>
         File should be jp(e)g, png, or gif
       </p>
-      {isInvalidSize && <p>Image too large.</p>}
-      {isInvalidType && <p>Invalid image type.</p>}
+      {isInvalidSize && <p className="drag-image__error">Image too large.</p>}
+      {isInvalidType && <p className="drag-image__error">Invalid image type.</p>}
       <section
         onDragOver={onDragOver}
         onDrop={onDrop}
@@ -57,6 +57,7 @@ export const DragImage = ({ uploadImage }: DragImageProps) => {
       </section>
       <p className="drag-image__or">Or</p>
       <input
+        className="drag-image__input"
         type="file"
         name="image-selecto"
         id="image-selector"
