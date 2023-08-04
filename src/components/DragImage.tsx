@@ -41,7 +41,7 @@ export const DragImage = ({ uploadImage }: DragImageProps) => {
   return (
     <div className="drag-image">
       <h1 className="drag-image__title">Upload your image</h1>
-      <p className={["drag-image__file-description", (isInvalidSize && isInvalidType) ? "drag-image__file-description--no-error" : ""].join(' ')}>
+      <p className={["drag-image__file-description", (!isInvalidSize && !isInvalidType) ? "drag-image__file-description--no-error" : ""].join(' ')}>
         File should be jp(e)g, png, or gif
       </p>
       {isInvalidSize && <p className="drag-image__error">Image too large.</p>}
