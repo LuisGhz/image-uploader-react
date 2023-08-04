@@ -8,3 +8,10 @@ html, body {
   display: contents;
   min-height: 100%;
 }
+
+:root {
+  --blue-1: #2f80ed;
+  --gray-2: #4f4f4f;
+  --gray-3: #828282;
+  --gray-4: #bdbdbd;
+}
