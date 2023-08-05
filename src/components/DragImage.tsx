@@ -46,7 +46,7 @@ export const DragImage = ({ uploadImage, uploadRes }: DragImageProps) => {
       <p
         className={[
           "drag-image__file-description",
-          !isInvalidSize && !isInvalidType && !uploadRes.message
+          !isInvalidSize && !isInvalidType && !uploadRes?.message
             ? "drag-image__file-description--no-error"
             : "",
         ].join(" ")}
@@ -57,7 +57,7 @@ export const DragImage = ({ uploadImage, uploadRes }: DragImageProps) => {
       {isInvalidType && (
         <p className="drag-image__error">Invalid image type.</p>
       )}
-      {uploadRes.message && (
+      {uploadRes?.message && (
         <p className="drag-image__error">{uploadRes.message}.</p>
       )}
       <section
