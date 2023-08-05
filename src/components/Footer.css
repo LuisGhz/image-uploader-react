@@ -1,0 +1,13 @@
+.footer {
+  color: #a9a9a9;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+}
+
+.footer__username {
+  font-weight: 700;
+}
