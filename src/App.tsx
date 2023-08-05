@@ -5,6 +5,7 @@ import { ViewState } from "./types/ViewState";
 import { useUploadToS3 } from "./hooks/useUploadToS3";
 import { UploadRes } from "./models/UploadRes";
 import { Uploading } from "./components/Uploading";
+import { Uploaded } from "./components/Uploaded";
 
 function App() {
   const [viewState, setViewState] = useState<ViewState>("drag");
@@ -30,6 +31,7 @@ function App() {
               <DragImage uploadImage={uploadImage} uploadRes={uploadResponse} />
             )}
           {viewState === "uploading" && <Uploading />}
+          {viewState === "uploaded" && <Uploaded fileUrl={uploadResponse.fileUrl!} />}
         </div>
       </main>
       <footer>Footer</footer>
