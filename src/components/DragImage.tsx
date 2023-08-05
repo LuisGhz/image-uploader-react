@@ -77,6 +77,7 @@ export const DragImage = ({ uploadImage, uploadRes }: DragImageProps) => {
         id="image-selector"
         data-testid="image-selector"
         accept="image/jpeg, image/png, image/gif, image/jpg"
+        multiple={false}
         onChange={(e) => onImageSelected(e)}
         ref={fileInput}
       />
