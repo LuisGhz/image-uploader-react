@@ -2,12 +2,14 @@ import React from "react";
 import dragImage from "../assets/drag-image.svg";
 import "./DragImage.css";
 import { useValidateImage } from "../hooks/useValidateImage";
+import { UploadRes } from "../models/UploadRes";
 
 export type DragImageProps = {
   uploadImage: (image: File) => void;
+  uploadRes: UploadRes;
 };
 
-export const DragImage = ({ uploadImage }: DragImageProps) => {
+export const DragImage = ({ uploadImage, uploadRes }: DragImageProps) => {
   const fileInput = React.useRef<HTMLInputElement>(null);
   const [isInvalidSize, setIsInvalidSize] = React.useState(false);
   const [isInvalidType, setIsInvalidType] = React.useState(false);
@@ -41,11 +43,23 @@ export const DragImage = ({ uploadImage }: DragImageProps) => {
   return (
     <div className="drag-image">
       <h1 className="drag-image__title">Upload your image</h1>
-      <p className={["drag-image__file-description", (!isInvalidSize && !isInvalidType) ? "drag-image__file-description--no-error" : ""].join(' ')}>
+      <p
+        className={[
+          "drag-image__file-description",
+          !isInvalidSize && !isInvalidType && !uploadRes?.message
+            ? "drag-image__file-description--no-error"
+            : "",
+        ].join(" ")}
+      >
         File should be jp(e)g, png, or gif
       </p>
       {isInvalidSize && <p className="drag-image__error">Image too large.</p>}
-      {isInvalidType && <p className="drag-image__error">Invalid image type.</p>}
+      {isInvalidType && (
+        <p className="drag-image__error">Invalid image type.</p>
+      )}
+      {uploadRes?.message && (
+        <p className="drag-image__error">{uploadRes.message}</p>
+      )}
       <section
         onDragOver={onDragOver}
         onDrop={onDrop}
