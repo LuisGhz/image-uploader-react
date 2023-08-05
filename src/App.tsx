@@ -1,25 +1,40 @@
-import { useState } from 'react';
-import './App.css'
-import { DragImage } from './components/DragImage'
-import { ViewState } from './types/ViewState';
+import { useState } from "react";
+import "./App.css";
+import { DragImage } from "./components/DragImage";
+import { ViewState } from "./types/ViewState";
+import { useUploadToS3 } from "./hooks/useUploadToS3";
+import { UploadRes } from "./models/UploadRes";
+import { Uploading } from "./components/Uploading";
 
 function App() {
   const [viewState, setViewState] = useState<ViewState>("drag");
-  
+  const [uploadResponse, setUploadResponse] = useState<UploadRes>(
+    {} as UploadRes
+  );
+  const { uploadToS3 } = useUploadToS3({
+    setViewState,
+    setUploadResponse,
+  });
+
   const uploadImage = async (image: File) => {
-    console.log(image);
+    await uploadToS3(image);
+    console.log(uploadResponse);
   };
 
   return (
     <>
-      <main className='image-uploader'>
-        <div className='container'>
-          {viewState === "drag" && <DragImage uploadImage={uploadImage} />}
+      <main className="image-uploader">
+        <div className="container">
+          {(viewState === "drag" ||
+            viewState === "error") && (
+              <DragImage uploadImage={uploadImage} uploadRes={uploadResponse} />
+            )}
+          {viewState === "uploading" && <Uploading />}
         </div>
       </main>
       <footer>Footer</footer>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
