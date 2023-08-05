@@ -58,7 +58,7 @@ export const DragImage = ({ uploadImage, uploadRes }: DragImageProps) => {
         <p className="drag-image__error">Invalid image type.</p>
       )}
       {uploadRes?.message && (
-        <p className="drag-image__error">{uploadRes.message}.</p>
+        <p className="drag-image__error">{uploadRes.message}</p>
       )}
       <section
         onDragOver={onDragOver}
