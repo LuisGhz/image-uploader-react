@@ -1,21 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0');
 
 html, body {
   height: 100%;
   margin: 0;
 }
 
-#root {
-  background: #FAFAFB;
-  display: contents;
-  min-height: 100%;
-}
-
-:root {
+body {
+  --bg-1: #FAFAFB;
+  --bg-2: #FFFFFF;
+  --bg-3: #f6f8fb;
   --red-1: #EB5757;
   --blue-1: #2f80ed;
   --gray-2: #4f4f4f;
   --gray-3: #828282;
   --gray-4: #bdbdbd;
   --gray-5: #e0e0e0;
+  --gray-6: #F2F2F2;
+}
+
+body.dark-mode {
+  --bg-1: #1F1F1F;
+  --bg-2: #2D2D2D;
+  --bg-3: #3A3A3A;
+  --red-1: #EB5757;
+  --blue-1: #2f80ed;
+  --gray-2: #F2F2F2;
+  --gray-3: #BDBDBD;
+  --gray-4: #828282;
+  --gray-5: #4F4F4F;
+  --gray-6: #414141;
+}
+
+#root {
+  display: contents;
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg-1);
 }

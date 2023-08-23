@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Uploaded.css";
+import { DarkLightMode } from './DarkLightMode';
 
 type UploadedProps = {
   fileUrl: string;
@@ -14,6 +15,7 @@ export const Uploaded = ({ fileUrl }: UploadedProps) => {
 
   return (
     <main className="uploaded">
+      <DarkLightMode />
       <p className="uploaded__icon">✓</p>
       <h1 className="uploaded__title">Uploaded successfully!</h1>
       <img className="uploaded__img" src={fileUrl} alt="Uploaded image" onLoad={() => setIsLoading(prev => !prev)} />

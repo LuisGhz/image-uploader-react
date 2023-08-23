@@ -36,7 +36,7 @@
 
 .link-container {
   align-items: center;
-  background: #f6f8fb;
+  background: var(--bg-3);
   border-radius: 8px;
   border: 1px solid var(--gray-5);
   display: flex;
@@ -45,6 +45,7 @@
 }
 
 .link-container__uri {
+  color: var(--gray-2);
   height: 15px;
   overflow: hidden;
   padding-block-end: 5px;

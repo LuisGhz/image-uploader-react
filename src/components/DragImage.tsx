@@ -3,6 +3,7 @@ import dragImage from "../assets/drag-image.svg";
 import "./DragImage.css";
 import { useValidateImage } from "../hooks/useValidateImage";
 import { UploadRes } from "../models/UploadRes";
+import { DarkLightMode } from "./DarkLightMode";
 
 export type DragImageProps = {
   uploadImage: (image: File) => void;
@@ -42,6 +43,7 @@ export const DragImage = ({ uploadImage, uploadRes }: DragImageProps) => {
 
   return (
     <div className="drag-image">
+      <DarkLightMode />
       <h1 className="drag-image__title">Upload your image</h1>
       <p
         className={[
