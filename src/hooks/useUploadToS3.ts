@@ -10,7 +10,7 @@ export const useUploadToS3 = ({
   setViewState,
   setUploadResponse,
 }: UseUploadToS3) => {
-  const url = "http://localhost:3000/api";
+  const url = import.meta.env.VITE_API_URL;
 
   const uploadToS3 = async (file: File) => {
     const formData = new FormData();
